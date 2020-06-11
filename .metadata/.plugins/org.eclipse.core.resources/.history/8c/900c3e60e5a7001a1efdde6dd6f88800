@@ -1,0 +1,5 @@
+package com.study.mybatis.bean;
+
+public class Department {
+
+}

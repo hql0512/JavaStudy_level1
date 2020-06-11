@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.study.mybatis.dao.DepartmentMapper">
+
+	<!--public Department getDeptById(Integer id);  -->
+	<select id="getDeptById" resultType="com.study.mybatis.bean.Department">
+		select id,dept_name departmentName from tbl_dept where id=#{id}
+	</select>
+	
+	<!-- 
+		public class Department {
+
+			private Integer id;
+			private String departmentName;
+			private List<Employee> emps;
+	}
+	 -->
+	 <!-- 嵌套结果集的方式，使用collection标签定义关联的集合类型元素的封装规则 -->
+	 <resultMap type="com.study.mybatis.bean.Department" id="MyDept">
+	 	<id column="did" property="id"/>
+	 	<result column="dept_name" property="departmentName"/>
+	 	<!-- collection：用于配置1:N关系的数据,定义关联集合类型的属性的封装规则 -->
+    	<!-- property：要封装到的属性名 -->
+    	<!-- ofType：集合中的元素的类型 -->
+	 	<collection property="emps" ofType="com.study.mybatis.bean.Employee">
+	 		<id column="eid" property="id"/>
+	 		<result column="last_name" property="lastName"/>
+	 		<result column="gender" property="gender"/>
+	 		<result column="email" property="email"/>
+	 	</collection>
+	 </resultMap>
+	 
+	<!-- public Department getDeptByIdPlus(Integer id); -->
+	<select id="getDeptByIdPlus" resultMap="MyDept">
+		SELECT
+			a.id did,
+			a.dept_name dept_name,
+			b.id eid,
+			b.last_name last_name,
+			b.gender gender,
+			b.email email 
+		FROM
+			tbl_dept a
+		LEFT JOIN 
+			tbl_employee b 
+		ON 
+			a.id = b.d_id 
+		WHERE
+			a.id = #{id};
+	</select>
+	
+	<!-- ==================collection 分步查询======================== -->
+	
+	<resultMap type="com.study.mybatis.bean.Department" id="MyDeptStep"></resultMap>
+	
+	<!-- public Department getDeptByIdStep(Integer id); -->
+	<select id="getDeptByIdStep" resultMap="">
+		select id,dept_name from tbl_dept where id=#{id}
+	</select>
+	
+</mapper>

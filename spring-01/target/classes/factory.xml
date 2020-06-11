@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+<!-- 通过静态工厂方法配置bean -->
+<!--
+	  class:指向静态工厂方法的全类名
+	  factory-method:指向静态工厂方法的名字
+	  constructor-arg:如果工厂方法需要传入参数，则用此来配置参数
+ -->
+	<bean id="cal" class="java.util.Calendar" factory-method="getInstance"></bean>
+	
+<!-- 通过对象的工厂方法配置bean（实例工厂方法） -->
+<!--
+	  factory-bean:指向对象的工厂方法的bean
+	  factory-method:指向对象的工厂方法的名字
+	  constructor-arg:如果工厂方法需要传入参数，则用此来配置参数
+ -->
+	<bean id="date" factory-bean="cal" factory-method="getTime"></bean>
+</beans>

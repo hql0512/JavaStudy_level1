@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.3.xsd">
+
+    <!-- 组件扫描 指定Spring IOC容器扫描的包 -->
+    <!-- 可通过resource-pattern指定扫描的资源-->
+    <!-- <context:component-scan 
+    	base-package="com.study.spring.annotation"
+    	resource-pattern="repository/*.class">              
+    </context:component-scan> -->
+    
+    <!-- <context:component-scan base-package="com.study.spring.annotation" use-default-filters="false">
+    context:exclude-filter 子节点指定排除哪些指定表达式的组件
+    	<context:exclude-filter type="annotation" expression="org.springframework.stereotype.Repository"/>
+    	
+    context:include-filter 子节点指定包含哪些表达式的组件，该子节点需要use-default-filters 配合使用
+    	<context:include-filter type="annotation" expression="org.springframework.stereotype.Repository"/>              
+    </context:component-scan> -->
+    
+    <context:component-scan 
+    	base-package="com.study.spring.annotation">
+    </context:component-scan>
+    
+    
+    <!-- type可以是基于annotation或assignable来指定排除或包含哪些组件 
+    annotation是基于注解的，assignable是基于类名的-->
+    
+</beans>

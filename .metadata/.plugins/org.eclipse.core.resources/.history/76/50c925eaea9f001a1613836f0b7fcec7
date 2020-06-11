@@ -1,0 +1,29 @@
+package com.study.springmvc.crud.dao;
+
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.Map;
+
+import com.study.springmvc.crud.entities.Employee;
+
+public class EmployeeDao {
+
+	private static Map<Integer, Employee> employees = null;
+
+	static {
+		employees = new HashMap<Integer, Employee>();
+		employees.put(101, new Employee());
+		employees.put(102, new Employee());
+		employees.put(103, new Employee());
+		employees.put(104, new Employee());
+		employees.put(105, new Employee());
+	}
+
+	public Collection<Employee> getEmployees() {
+		return employees.values();
+	}
+
+	public Employee getEmployee(Integer id) {
+		return employees.get(id);
+	}
+}

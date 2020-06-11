@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.study.mybatis.dao.DepartmentMapper">
+
+	<!--public Department getDeptById(Integer id);  -->
+	<select id="getDeptById" resultType="com.study.mybatis.bean.Department">
+		select id,dept_name departmentName from tbl_dept where id=#{id}
+	</select>
+	
+	<!-- 
+		public class Department {
+
+			private Integer id;
+			private String departmentName;
+			private List<Employee> emps;
+	}
+	 -->
+	 <resultMap type="com.study.mybatis.bean.Department" id="MyDept"></resultMap>
+	 
+	<!-- public Department getDeptByIdPlus(Integer id); -->
+	<select id="getDeptById" resultMap="MyDept">
+		SELECT
+			a.id did,
+			a.dept_name dept_name,
+			b.id eid,
+			b.last_name last_name,
+			b.gender gender,
+			b.email email 
+		FROM
+			tbl_dept a
+		LEFT JOIN 
+			tbl_employee b 
+		ON 
+			a.id = b.d_id 
+		WHERE
+			a.id = #{id};
+	</select>
+	
+</mapper>

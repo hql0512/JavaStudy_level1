@@ -1,0 +1,7 @@
+<classpath>
+  <container id="shiro-2!org.eclipse.jst.j2ee.internal.web.container">
+    <entry id="D:/JavaStudyWorkSpace/shiro-2/WebContent/WEB-INF/lib/shiro-all-1.3.2.jar">
+      <source-attachment-path>C:/Users/Administrator/Desktop/shiro-root-1.3.2-source-release.zip</source-attachment-path>
+    </entry>
+  </container>
+</classpath>

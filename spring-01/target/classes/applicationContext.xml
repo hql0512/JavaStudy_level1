@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.3.xsd">
+	<!--
+		配置bean
+		class:bean的全类名，可见是以反射的方式在IOC容器中创建bean，所以要求bean必须有无参构造器
+		id:标识容器中的bean，id必须是唯一的
+	 -->
+	 <!-- 通过setter方法注入Bean的属性值或依赖的对象 -->
+	<bean id="helloWorld" class="com.study.spring.beans.HelloWorld">
+		<property name="name" value="java"></property>
+	</bean>
+	
+	<!-- 通过构造方法配置bean的属性，另外还有一种工厂方法注入的方式（不推荐）-->
+	<bean id="car" class="com.study.spring.beans.Car">
+		<constructor-arg value="benchi" index="0"></constructor-arg>
+		<constructor-arg value="shanghai" index="1"></constructor-arg>
+		<constructor-arg value="30000" type="double"></constructor-arg>
+	</bean>
+	<!-- 使用构造器注入属性可以指定参数的位置和类型，以区分重载的构造器 -->
+	<bean id="car2" class="com.study.spring.beans.Car">
+		<constructor-arg value="BMW" type="java.lang.String"></constructor-arg>
+		<!-- <constructor-arg value="shanghai" type="java.lang.String"></constructor-arg> -->
+		
+		<!-- 如果字面值包含特殊字符可以使用<![CDATA[]]>包裹起来 -->
+		<!-- 属性值也可以使用value直接配置 -->
+		<constructor-arg type="java.lang.String">
+			<value><![CDATA[<Shanghai^>]]></value>
+		</constructor-arg>
+		<constructor-arg value="30000" type="int"></constructor-arg>
+	</bean>
+	
+	
+	<bean id="person" class="com.study.spring.beans.Person">
+		<property name="name" value="Tom"></property>
+		<property name="age" value="24"></property>
+		<!-- 可以使用property的ref属性建立bean之间的引用关系 -->
+		<!-- 当注入值时，如果值是基本值，则使用value属性来配置，如果是另一个<bean>时，使用`ref`属性来配置！值为另一个<bean>的id -->
+		<!-- <property name="car" ref="car"></property> -->
+		<!-- <property name="car">
+			<ref bean="car"/>
+		</property> -->
+		<property name="car">
+		<!-- 内部bean，不能被外部引用，只能在内部使用 -->
+			<bean class="com.study.spring.beans.Car">
+				<constructor-arg value="Ford" index="0"></constructor-arg>
+		        <constructor-arg value="shanghai" index="1"></constructor-arg>
+		        <constructor-arg value="30000" type="double"></constructor-arg>
+			</bean>
+		</property>
+	</bean>
+	
+	<bean id="person2" class="com.study.spring.collections.Person">
+		<property name="name" value="Bob"></property>
+		<property name="age" value="24"></property>
+		<property name="carList">
+		<!-- 使用List节点为List类型的属性赋值 -->
+			<list>
+				<ref bean="car"/>
+				<ref bean="car2"/>
+				<!-- 内部bean -->
+				<bean class="com.study.spring.beans.Car">
+					<constructor-arg value="Ford" index="0"></constructor-arg>
+			        <constructor-arg value="shanghai" index="1"></constructor-arg>
+			        <constructor-arg value="30000" type="double"></constructor-arg>
+				</bean>
+			</list>
+		</property>
+		
+		<!-- 配置map属性值 -->
+		<property name="carMap">
+		<!-- 使用map节点和entry子节点配置Map类型的成员变量 -->
+			<map>
+				<entry key="A" value-ref="car"></entry>
+				<entry key="B" value-ref="car2"></entry>
+			</map>
+		</property>	
+	</bean>
+	
+	<!-- 配置properties属性 -->
+	<bean name="dataSource" class="com.study.spring.collections.DataSource">
+		<property name="properties">
+		<!-- 使用props节点和prop子节点为properties属性赋值 -->
+			<props>
+				<prop key="username">root</prop>
+				<prop key="password">root</prop>
+				<prop key="jdbcUrl">jdbc:mysql://test</prop>
+				<prop key="driverClass">com.mysql.jdbc.Driver</prop>
+			</props>
+		</property>
+	</bean>
+	
+	<!-- 配置独立的集合bean， 以供多个bean引用,需要导入util命名空间-->
+	<util:list id="carList">
+		<ref bean="car"/>
+		<ref bean="car2"/>
+	</util:list>
+	
+	<bean id="person3" class="com.study.spring.collections.Person">
+		<property name="name" value="Nike"></property>
+		<property name="age" value="24"></property>
+		<property name="carList" ref="carList"></property>
+	</bean>
+	
+	<!-- 通过p命名空间为bean的属性赋值，需要先导入p命名空间 ，相对于传统配置方式更加简洁-->
+	<bean id="person4" class="com.study.spring.collections.Person" p:name="Rose"
+	p:age="24" p:carList-ref="carList"></bean>
+
+</beans>

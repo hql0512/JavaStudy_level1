@@ -1,0 +1,14 @@
+package com.study.mybatis.dao;
+
+import java.util.List;
+
+import com.study.mybatis.bean.Department;
+import com.study.mybatis.bean.Employee;
+
+public interface DepartmentMapper {
+	
+	public List<Employee> getEmpsByDeptId(Integer deptId);
+	
+	public Department getDeptById(Integer id);
+
+}

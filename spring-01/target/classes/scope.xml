@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!-- scope属性配置作用域
+     singleton:默认值，容器初始时创建bean实例，整个生命周期只创建一个bean，单例
+     prototype:原型的，容器初始化时不创建实例，而在每次请求时创建一个新的bean实例并返回 
+-->
+	<bean id="address" class="com.study.spring.scope.Address" scope="prototype">
+		<property name="city" value="Beijing"></property>
+		<property name="street" value="zhongguancun"></property>
+	</bean>
+</beans>

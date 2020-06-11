@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.study.mybatis.dao.EmployeeMapper2">
+
+	<!-- 自定义某个javabean的封装规则，指导MyBatis如何将查询结果封装到对象中 -->
+	<!-- type:自定义规则的java类型，将查询结果封装到哪种类型的对象中 -->
+	<!-- id: 唯一id方便引用，自定义-->
+	<resultMap type="com.study.mybatis.bean.Employee" id="myEmp">
+		<!-- id节点：用于配置主键字段的值的封装  id节点来定义主键底层会有优化，用result节点也行，推荐用id节点-->
+	    <!-- column：查询结果中的列名 -->
+	    <!-- property：要封装到的属性名 -->
+    	<id column="id" property="id" />
+    	<!-- result节点：用于配置非主键字段的值的封装，column和property属性同上-->
+    	<result column="last_name" property="lastName"/>
+	</resultMap>
+
+
+	<!-- resultMap:自定义结果集映射规则 -->
+	<!-- public Employee getEmpById(Integer id); -->
+	<select id="getEmpById" resultMap="">
+		select * from tbl_employee where id = #{id}
+	</select>
+	
+</mapper>

@@ -1,0 +1,6 @@
+package com.study.mybatis.dao;
+
+public interface EmployeeMapper {
+
+	public Employee getEmpById(Integer id);
+}
