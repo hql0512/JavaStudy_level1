@@ -1,0 +1,5 @@
+package com.study.mybatis.typehandler;
+
+public class MyEnumTypeHandler {
+
+}

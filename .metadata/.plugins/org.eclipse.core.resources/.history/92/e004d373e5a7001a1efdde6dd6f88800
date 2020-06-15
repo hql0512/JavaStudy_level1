@@ -1,7 +1,0 @@
-package com.study.mybatis.bean;
-
-public class Department {
-
-	private Integer id;
-	private String departName;
-}

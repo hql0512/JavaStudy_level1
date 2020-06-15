@@ -2,6 +2,7 @@
 <section name="Workbench">
 	<section name="MavenProjectWizardArtifactPage">
 		<list key="groupId">
+			<item value="com.study.mybatisPlus"/>
 			<item value="com.study"/>
 			<item value="com"/>
 		</list>
@@ -9,6 +10,7 @@
 			<item value="Spring-01"/>
 		</list>
 		<list key="artifactId">
+			<item value="MybatisPlus01"/>
 			<item value="MyBatis_02_config"/>
 			<item value="MyBatis_01_HelloWorld"/>
 			<item value="shiro-1"/>
@@ -75,6 +77,7 @@
 	</section>
 	<section name="MavenProjectWizardLocationPage">
 		<list key="location">
+			<item value="D:\JavaStudyWorkSpace\MyBatis_10_other"/>
 			<item value="D:\JavaStudyWorkSpace\springmvc-2"/>
 		</list>
 		<list key="projectNameTemplate">
