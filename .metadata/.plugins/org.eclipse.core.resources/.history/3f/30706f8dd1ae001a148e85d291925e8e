@@ -1,0 +1,26 @@
+package com.study.mp.injector;
+
+import org.apache.ibatis.builder.MapperBuilderAssistant;
+import org.apache.ibatis.session.Configuration;
+
+import com.baomidou.mybatisplus.entity.TableInfo;
+import com.baomidou.mybatisplus.mapper.AutoSqlInjector;
+
+/**
+ * 自定义全局操作
+ * @author Administrator
+ *
+ */
+public class MySqlInjector extends AutoSqlInjector{
+
+	/**
+	 * 扩展inject操作，完成全局自定义操作
+	 */
+	@Override
+	public void inject(Configuration configuration, MapperBuilderAssistant builderAssistant, Class<?> mapperClass,
+			Class<?> modelClass, TableInfo table) {
+		//将EmployeeMapper中定义的deleteAll，处理成对应的MappedStatement对象，加入到configuration对象中
+		
+		//注入的sql语句
+	}
+}

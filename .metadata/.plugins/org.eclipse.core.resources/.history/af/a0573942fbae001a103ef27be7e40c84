@@ -1,0 +1,5 @@
+package com.study.mp.mapper;
+
+public interface UserMapper {
+
+}

@@ -1,0 +1,5 @@
+package com.study.mp.injector;
+
+public class MySqlInjector {
+
+}

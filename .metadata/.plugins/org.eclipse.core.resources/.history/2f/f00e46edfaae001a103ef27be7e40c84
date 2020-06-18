@@ -1,0 +1,8 @@
+package com.study.mp.beans;
+
+public class User {
+	
+	private Integer id;
+	private String name;
+	private Intger logic_flag;
+}
