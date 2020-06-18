@@ -1,13 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="org.apache.ibatis.annotations.MapKey"/>
-<fullyQualifiedTypeName name="com.study.mybatis.dao.EmployeeMapper2"/>
-<fullyQualifiedTypeName name="com.study.mybatis.dao.DepartmentMapper"/>
-<fullyQualifiedTypeName name="com.study.mybatis.dao.EmployeeMapperDynamicSQL"/>
-<fullyQualifiedTypeName name="com.mysql.cj.x.protobuf.MysqlxDatatypes.Array"/>
-<fullyQualifiedTypeName name="com.study.mybatis.bean.Department"/>
-<fullyQualifiedTypeName name="org.junit.Test"/>
-<fullyQualifiedTypeName name="java.io.File"/>
 <fullyQualifiedTypeName name="org.mybatis.generator.config.xml.ConfigurationParser"/>
 <fullyQualifiedTypeName name="org.mybatis.generator.config.Configuration"/>
 <fullyQualifiedTypeName name="org.mybatis.generator.internal.DefaultShellCallback"/>
@@ -32,15 +24,10 @@
 <fullyQualifiedTypeName name="com.study.mybatis.bean.Employee"/>
 <fullyQualifiedTypeName name="org.apache.ibatis.type.TypeHandler"/>
 <fullyQualifiedTypeName name="com.study.mybatis.bean.EmpStatus"/>
-<fullyQualifiedTypeName name="org.springframework.context.ApplicationContext"/>
-<fullyQualifiedTypeName name="org.springframework.context.support.ClassPathXmlApplicationContext"/>
 <fullyQualifiedTypeName name="javax.sql.DataSource"/>
-<fullyQualifiedTypeName name="com.baomidou.mybatisplus.mapper.BaseMapper"/>
-<fullyQualifiedTypeName name="com.study.mp.mapper.EmployeeMapper"/>
 <fullyQualifiedTypeName name="cim.study.mp.beans.Employee"/>
 <fullyQualifiedTypeName name="com.baomidou.mybatisplus.annotations.TableId"/>
 <fullyQualifiedTypeName name="com.baomidou.mybatisplus.annotations.TableName"/>
-<fullyQualifiedTypeName name="com.baomidou.mybatisplus.annotations.TableField"/>
 <fullyQualifiedTypeName name="java.util.Collection"/>
 <fullyQualifiedTypeName name="java.util.Arrays"/>
 <fullyQualifiedTypeName name="java.util.Map"/>
@@ -49,8 +36,6 @@
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="com.baomidou.mybatisplus.mapper.Condition"/>
 <fullyQualifiedTypeName name="com.baomidou.mybatisplus.activerecord.Model"/>
-<fullyQualifiedTypeName name="com.study.mp.beans.Employee"/>
-<fullyQualifiedTypeName name="com.baomidou.mybatisplus.plugins.Page"/>
 <fullyQualifiedTypeName name="com.baomidou.mybatisplus.mapper.EntityWrapper"/>
 <fullyQualifiedTypeName name="com.baomidou.mybatisplus.generator.config.GlobalConfig"/>
 <fullyQualifiedTypeName name="com.baomidou.mybatisplus.enums.IdType"/>
@@ -60,4 +45,19 @@
 <fullyQualifiedTypeName name="com.baomidou.mybatisplus.generator.config.rules.NamingStrategy"/>
 <fullyQualifiedTypeName name="com.baomidou.mybatisplus.generator.config.PackageConfig"/>
 <fullyQualifiedTypeName name="com.baomidou.mybatisplus.generator.AutoGenerator"/>
+<fullyQualifiedTypeName name="org.springframework.context.ApplicationContext"/>
+<fullyQualifiedTypeName name="org.springframework.context.support.ClassPathXmlApplicationContext"/>
+<fullyQualifiedTypeName name="com.study.mp.mapper.EmployeeMapper"/>
+<fullyQualifiedTypeName name="com.baomidou.mybatisplus.plugins.Page"/>
+<fullyQualifiedTypeName name="com.baomidou.mybatisplus.annotations.Version"/>
+<fullyQualifiedTypeName name="com.baomidou.mybatisplus.mapper.AutoSqlInjector"/>
+<fullyQualifiedTypeName name="org.apache.ibatis.mapping.SqlSource"/>
+<fullyQualifiedTypeName name="com.study.mp.beans.Employee"/>
+<fullyQualifiedTypeName name="com.baomidou.mybatisplus.annotations.TableLogic"/>
+<fullyQualifiedTypeName name="com.baomidou.mybatisplus.mapper.BaseMapper"/>
+<fullyQualifiedTypeName name="com.study.mp.mapper.UserMapper"/>
+<fullyQualifiedTypeName name="com.baomidou.mybatisplus.annotations.TableField"/>
+<fullyQualifiedTypeName name="com.baomidou.mybatisplus.enums.FieldFill"/>
+<fullyQualifiedTypeName name="com.baomidou.mybatisplus.mapper.MetaObjectHandler"/>
+<fullyQualifiedTypeName name="com.study.mp.beans.User"/>
 </qualifiedTypeNameHistroy>

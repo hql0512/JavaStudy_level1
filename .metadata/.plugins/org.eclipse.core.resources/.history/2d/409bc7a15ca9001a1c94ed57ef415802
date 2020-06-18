@@ -1,5 +1,0 @@
-package com.study.test3;
-
-public abstract class Reptile extends Animal {
-
-}
