@@ -1,5 +1,0 @@
-package com.study.mybatis.bean;
-
-public enum EmpStatus {
-
-}

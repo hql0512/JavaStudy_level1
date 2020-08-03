@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <aop-reference-model>
-<aop-project name="MybatisPlus05"/>
+<aop-project name="MybatisPlus01"/>
+<aop-project name="MybatisPlus02"/>
+<aop-project name="MybatisPlus03"/>
 </aop-reference-model>
